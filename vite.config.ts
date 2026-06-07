@@ -1,0 +1,39 @@
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+
+  resolve: {
+    alias: { '@': path.resolve(__dirname, 'src') },
+  },
+
+  build: {
+    target: 'es2015',
+    rollupOptions: {
+      output: {
+        // تقسيم الكود لتسريع التحميل الأول
+        manualChunks: {
+          vendor:   ['react', 'react-dom'],
+          supabase: ['@supabase/supabase-js'],
+          motion:   ['framer-motion'],
+          icons:    ['lucide-react'],
+        },
+      },
+    },
+  },
+
+  server: {
+    port: 5173,
+    strictPort: false,
+  },
+
+  preview: {
+    port: 4173,
+  },
+});
