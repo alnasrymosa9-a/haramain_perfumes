@@ -22,12 +22,12 @@ export function HeroSection() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7 }}
-          className="mb-6 sm:mb-8 flex justify-center"
+          className="mb-6 sm:mb-8"
         >
           <img
             src="/logo.png"
             alt="الحرمين للعود والعطور"
-            className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-2 border-gold-400/40 shadow-2xl shadow-gold-400/20"
+            className="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full object-cover border-2 border-gold-400/40 shadow-2xl shadow-gold-400/20"
           />
         </motion.div>
 
