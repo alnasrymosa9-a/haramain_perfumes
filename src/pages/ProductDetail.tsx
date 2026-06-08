@@ -162,11 +162,15 @@ export function ProductDetailPage() {
               <div className="glass rounded-xl p-3 text-center"><Star size={18} className="text-gold-400 mx-auto mb-1" /><span className="text-dark-300 text-xs">منتجات أصلية مضمونة</span></div>
             </div>
 
-            {navigator.share && (
-              <button onClick={handleShare} className="flex items-center gap-2 text-dark-400 hover:text-gold-400 transition-colors text-sm">
-                <Share2 size={15} />مشاركة المنتج
-              </button>
-            )}
+            {('share' in navigator) && (
+  <button
+    onClick={handleShare}
+    className="flex items-center gap-2 text-dark-400 hover:text-gold-400 transition-colors text-sm"
+  >
+    <Share2 size={15} />
+    مشاركة المنتج
+  </button>
+)}
           </motion.div>
         </div>
 
