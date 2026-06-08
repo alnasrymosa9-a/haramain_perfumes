@@ -48,10 +48,10 @@ export function Navbar() {
     <>
       <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? 'glass-dark shadow-lg shadow-black/30' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-<div className="flex items-center justify-between h-16 sm:h-20 relative">
+<div className="flex items-center justify-between h-16 sm:h-20">
 
             {/* الشعار */}
-            <button onClick={() => navigateTo('home')} className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 sm:gap-3 group" aria-label="الرئيسية">
+            <button onClick={() => navigateTo('home')} className="flex items-center gap-2 sm:gap-3 group" aria-label="الرئيسية">
               <img
                 src="/logo.png"
                 alt="الحرمين"
